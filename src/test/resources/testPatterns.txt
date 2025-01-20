@@ -1,0 +1,6 @@
+# File for integration test
+[spam]
+555*
+
+[ham]
+9NN
