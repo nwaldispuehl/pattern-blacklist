@@ -159,7 +159,7 @@ The application can be packaged to a native executable using:
 ./gradlew quarkusBuild -Dquarkus.native.enabled=true -Dquarkus.package.jar.enabled=false
 ```
 
-You can then execute your native executable with e.g.: `./build/pattern-blacklist-0.0.2-SNAPSHOT-runner`
+You can then execute your native executable with e.g.: `./build/pattern-blacklist-0.0.3-SNAPSHOT-runner`
 
 If you want to learn more about building native executables, please consult <https://quarkus.io/guides/gradle-tooling>.
 
