@@ -29,6 +29,10 @@ RUN mkdir -p /opt/pattern-blacklist  \
     && touch /opt/pattern-blacklist/patterns.txt  \
     && chmod 0777 /opt/pattern-blacklist/patterns.txt
 
+# Creating the log directory
+RUN mkdir /opt/pattern-blacklist/logs \
+    && chmod -R 0777 /opt/pattern-blacklist/logs
+
 EXPOSE 8080
 USER 1001
 

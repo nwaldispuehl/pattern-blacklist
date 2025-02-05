@@ -10,7 +10,8 @@ The text-based blacklist supports patterns. The software is addressed via HTTP R
 Create a pattern file (the 'blacklist'):
 
 ```shell script
-cat >> patterns.txt << EOF
+mkdir pattern-blacklist
+cat >> pattern-blacklist/patterns.txt << EOF
 [spam]
 555-9*
 [ham]
@@ -23,7 +24,7 @@ and then start the container with:
 ```
 $ docker run --rm \
     -p 8080:8080 \
-    -v ${PWD}/patterns.txt:/opt/pattern-blacklist/patterns.txt \
+    -v ${PWD}/pattern-blacklist:/opt/pattern-blacklist \
     ghcr.io/nwaldispuehl/pattern-blacklist:latest
 ```
 
@@ -113,7 +114,7 @@ To run a docker container of the project you can use this statement:
 ```
 $ docker run --rm \
     -p 8080:8080 \
-    -v /path/to/patterns.txt:/opt/pattern-blacklist/patterns.txt \
+    -v /path/to/pattern-blacklist-directory:/opt/pattern-blacklist \
     ghcr.io/nwaldispuehl/pattern-blacklist:latest
 ```
 
@@ -129,7 +130,7 @@ services:
     ports:
       - 8080:8080
     volumes:
-      - /path/to/patterns.txt:/opt/pattern-blacklist/patterns.txt
+      - /path/to/pattern-blacklist-directory:/opt/pattern-blacklist
     restart: unless-stopped
 ```
 
