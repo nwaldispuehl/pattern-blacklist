@@ -157,7 +157,7 @@ You can run your application in dev mode that enables live coding using:
 The application can be packaged to a native executable using:
 
 ```shell script
-./gradlew quarkusBuild -Dquarkus.native.enabled=true -Dquarkus.package.jar.enabled=false
+./gradlew clean quarkusBuild -Dquarkus.native.enabled=true -Dquarkus.package.jar.enabled=false
 ```
 
 You can then execute your native executable with e.g.: `./build/pattern-blacklist-0.0.3-SNAPSHOT-runner`
