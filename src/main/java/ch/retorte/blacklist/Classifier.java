@@ -67,7 +67,7 @@ public class Classifier {
     // ---- Methods
 
     void onStart(@Observes StartupEvent event) {
-        log.info("Starting with blacklist file path: " + patternFilePath);
+        log.debug("Starting with blacklist file path: " + patternFilePath);
         reloadPatternsFromFile();
         addFileWatcher();
     }
@@ -132,7 +132,7 @@ public class Classifier {
                 continue;
             }
 
-            log.info(format("Ingesting %s pattern: %s", spamPattern ? SPAM : HAM, cleanedLine));
+            log.debug(format("Ingesting %s pattern: %s", spamPattern ? SPAM : HAM, cleanedLine));
 
             if (spamPattern) {
                 spamInputPatterns.add(cleanedLine);
